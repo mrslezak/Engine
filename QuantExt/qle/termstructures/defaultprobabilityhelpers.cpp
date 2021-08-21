@@ -36,13 +36,13 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 */
 
-#include <qle/instruments/creditdefaultswap.hpp>
+//#include <qle/instruments/creditdefaultswap.hpp>
 #include <qle/pricingengines/midpointcdsengine.hpp>
 #include <qle/termstructures/defaultprobabilityhelpers.hpp>
 
 #include <ql/time/daycounters/actual360.hpp>
 #include <ql/utilities/null_deleter.hpp>
-
+#include <ql/instruments/creditdefaultswap.hpp> // not exactly sure why cdsMaturity isn't found if this is declared first VS2017 / mrslezak github
 #include <boost/make_shared.hpp>
 
 namespace QuantExt {

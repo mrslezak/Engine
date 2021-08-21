@@ -43,6 +43,7 @@
 #include <ql/cashflows/couponpricer.hpp>
 #include <ql/termstructures/yieldtermstructure.hpp>
 #include <ql/utilities/vectors.hpp>
+#include <ql/time/calendars/weekendsonly.hpp> // added missing include / mrslezak github
 
 using std::vector;
 

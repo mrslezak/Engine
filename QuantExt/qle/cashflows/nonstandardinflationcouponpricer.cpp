@@ -37,7 +37,7 @@ NonStandardYoYInflationCouponPricer::NonStandardYoYInflationCouponPricer(
 }
 
 void NonStandardYoYInflationCouponPricer::setCapletVolatility(const Handle<YoYOptionletVolatilitySurface>& capletVol) {
-    QL_REQUIRE(!capletVol.empty(), "empty capletVol handle")
+    QL_REQUIRE(!capletVol.empty(), "empty capletVol handle"); // added a semicolon to compile on VS2017 w/o C2146 error / mrslezak github
     capletVol_ = capletVol;
     registerWith(capletVol_);
 }

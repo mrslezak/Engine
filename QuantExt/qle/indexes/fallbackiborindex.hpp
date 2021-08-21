@@ -56,7 +56,9 @@ public:
                                                        const bool telescopicValueDates = false) const;
 
 private:
-    Rate forecastFixing(const Date& valueDate, const Date& endDate, Time t) const override;
+//    Rate forecastFixing(const Date& valueDate, const Date& endDate, Time t) const override;
+	// Compiler says this doesn't override a base class, so remove override to compile VS2017 / mrslezak github
+    Rate forecastFixing(const Date& valueDate, const Date& endDate, Time t) const;
     boost::shared_ptr<IborIndex> originalIndex_;
     boost::shared_ptr<OvernightIndex> rfrIndex_;
     Real spread_;

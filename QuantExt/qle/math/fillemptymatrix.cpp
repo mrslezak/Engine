@@ -108,9 +108,10 @@ void fillIncompleteMatrix(Matrix& mat, bool interpRows = true, Real blank = QL_N
             QL_FAIL("1 X 1 empty matrix given to fill."); // !is_full and 1 X 1 matrix.
         }
         if (interpRows) {
-            QL_REQUIRE(mat.columns() > 1, "Too few columns in matrix to interpolate within rows.")
+            QL_REQUIRE(mat.columns() > 1, "Too few columns in matrix to interpolate within rows."); // added a semicolon to compile on VS2017 w/o C2146 error / mrslezak github
             fillMatrixImpl(mat, blank);
-        } else {
+        } 
+		else {
             QL_REQUIRE(mat.rows() > 1, "Too few rows in matrix to interpolate within columns.");
             Matrix m2 = transpose(mat);
             fillMatrixImpl(m2, blank);

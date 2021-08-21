@@ -239,7 +239,7 @@ MakeFixedBMASwap& MakeFixedBMASwap::withNominal(Real n) {
 }
 
 MakeFixedBMASwap& MakeFixedBMASwap::withBMALegTenor(const Period& tenor) {
-    QL_REQUIRE(tenor.units() == Months, "Average BMA Leg coupons should pay as a multiple of months.")
+    QL_REQUIRE(tenor.units() == Months, "Average BMA Leg coupons should pay as a multiple of months."); // added a semicolon to compile on VS2017 w/o C2146 error / mrslezak github
     bmaLegTenor_ = tenor;
     return *this;
 }

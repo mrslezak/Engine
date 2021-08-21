@@ -34,7 +34,7 @@ CarrMadanMarginalProbability::CarrMadanMarginalProbability(const std::vector<Rea
 
     QL_REQUIRE(strikes_.size() == callPrices_.size(), "CarrMadanMarginalProbability: strikes ("
                                                           << strikes_.size() << ") inconsistent to callPrices ("
-                                                          << callPrices_.size() << ")";)
+                                                          << callPrices_.size() << ")"); // moved the semicolon outside the parenthesis no C2143 error VS2017 / mrslezak github
 
     QL_REQUIRE(!strikes_.empty(), "CarrMadanMarginalProbability: input moneyness is empty");
 
